@@ -17,6 +17,9 @@ export const Error = () => {
       <h1 className="text-[35px] text-black font-[700] italic">
         Oh No! There&apos;s a problem...
       </h1>
+      <p className="text-[20px] text-gray-700 font-[500] italic">
+        We&apos;re working on the problem right away!
+      </p>
     </div>
   );
 };
