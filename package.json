@@ -4,12 +4,14 @@
   "main": "app/chat-server/server.tsx",
   "private": true,
   "scripts": {
-    "dev": "next dev",
+    "dev": "NODE_OPTIONS='--inspect' nex dev",
     "build": "next build",
     "start": "node app/chat-server/server.tsx",
     "lint": "next lint"
   },
   "dependencies": {
+    "@tanstack/react-query": "^5.8.4",
+    "axios": "^1.6.2",
     "cors": "^2.8.5",
     "express": "^4.18.2",
     "next": "14.0.1",
