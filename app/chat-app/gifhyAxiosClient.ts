@@ -1,3 +1,4 @@
+import { useQuery } from "@tanstack/react-query";
 import axios from "axios";
 
 console.log("connected");
@@ -25,16 +26,9 @@ const gifhyAxiosClient = async () => {
   }
 };
 
-export default gifhyAxiosClient;
-
-export async function getStaticProps() {
-  try {
-    const gifhyStickersProp = await gifhyAxiosClient();
-    console.log(gifhyStickersProp);
-    return { props: { gifhyStickersProp } };
-  } catch (error) {
-    console.log(error);
-    // return an empty string
-    return { props: { gifhyStickersProp: [] } };
-  }
-}
+export const useGifhyData = () => {
+  return useQuery({
+    queryKey: ["gif"],
+    queryFn: gifhyAxiosClient,
+  });
+};
